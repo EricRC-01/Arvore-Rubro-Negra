@@ -296,20 +296,17 @@ void printTreeORD(nodeType *pNode)
 {
 
     if(pNode == NULL){
-        //printf("null\n");
+        printf("null\n");
         return;
     }
     
     
-    //printf("Direita do (%i) \n",pNode->num);
     printTreeORD(pNode->filho_esq);
 
     printf("%d ",pNode->chave);
 
     printTreeORD(pNode->filho_dir);
     
-    //printf("Esquerda do (%i)\n",pNode->num);
-
     return;
 }
 
@@ -317,35 +314,15 @@ void printTreeORD(nodeType *pNode)
 void printTreePRE(nodeType *pNode)
 {
     if(pNode != NULL){
-		//printf("------Node atual  ");
 		printf("%d ",pNode->chave);
-		//printf("------\n");
 	}
 	else {
-		//printf("------Node atual ( NULL )------\n");
 		return;
 	}
 	
-	//Prints test
-	/* 	
-		if(pNode->filho_dir != NULL) 
-			printf("Filho direito = (%i, %i)\n",pNode->filho_d) ave, pNode->fi);
-		
-		else printf("Filho direito = NULL\n");
-
-		if(pNode->filho_esq != NULL) 
-			printf("Filho esquerdo = (%i, %i)\n",pNode->filho_e) ave, pNode->fi);
-		
-		else printf("Filho esquerdo = NULL\n");
-
-    */
-	
-	//printf("Esquerda do (%i)\n",pNode->num);
     printTreePRE(pNode->filho_esq);
-	//printf("Direita do (%i) \n",pNode->num);
-	printTreePRE(pNode->filho_dir);
 
-	
+	printTreePRE(pNode->filho_dir);
 
     return;
 }
@@ -354,7 +331,6 @@ void printTreePRE(nodeType *pNode)
 void printTreePOS(nodeType *pNode)
 {
     if(pNode != NULL){
-		//printf("------Node atual  ");
 		
 	    printTreePOS(pNode->filho_esq);
 
@@ -362,7 +338,6 @@ void printTreePOS(nodeType *pNode)
 
 		
 		printf("%d ",pNode->chave);
-		//printf("------\n");
 	}
 	
     return;
